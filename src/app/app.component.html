@@ -15,7 +15,7 @@
     <input matInput (keyup)="applyFilter($event)" placeholder="i.e David Smith" #input>
   </mat-form-field>
 
-  <!-- The employee details table -->
+  <!-- The customer details table -->
   <div class="table-container">
     <table mat-table [dataSource]="dataSource" matSort>
       <ng-container matColumnDef="id">
@@ -69,6 +69,6 @@
       </tr>
     </table>
 
-    <mat-paginator [pageSizeOptions]="[20, 25, 30, 35]" aria-label="Select page of users"></mat-paginator>
+    <mat-paginator [pageSizeOptions]="[10,20, 25, 30, 35]" aria-label="Select page of users"></mat-paginator>
   </div>
 </div>

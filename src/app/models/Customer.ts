@@ -1,5 +1,5 @@
 export class Customer{
-    customerId?:number=0;
+    id?:number=0;
     firstName="";
     lastName="";
     email="";

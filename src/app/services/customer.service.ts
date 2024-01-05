@@ -15,13 +15,13 @@ export class CustomerService {
     return this.http.get<Customer[]>(`${environment.apiUrl}/${this.Url}`)
     }   
     public updateCustomers(customer:Customer): Observable<Customer[]> {
-      return this.http.put<Customer[]>(`${environment.apiUrl}/${this.Url}`,customer)
+      return this.http.put<Customer[]>(`${environment.apiUrl}/${this.Url}}`,customer)
       }   
       public createCustomers(customer:Customer): Observable<Customer[]> {
         return this.http.post<Customer[]>(`${environment.apiUrl}/${this.Url}`,customer)
         }   
         public deleteCustomers(customer:Customer): Observable<Customer[]> {
-          return this.http.delete<Customer[]>(`${environment.apiUrl}/${this.Url}/${customer.customerId}`)
+          return this.http.delete<Customer[]>(`${environment.apiUrl}/${this.Url}/${customer.id}`)
           }   
 
   }

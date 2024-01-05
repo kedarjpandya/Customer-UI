@@ -12,9 +12,9 @@
             Email:
             <input [(ngModel)]="customer.email" placeholder="email">
         </div>
-        <button (click)="updateCustomer(customer)" *ngIf="customer?.customerId">Update Customer</button>
-        <button (click)="deleteCustomer(customer)" *ngIf="customer?.customerId">Delete Customer</button>
-        <button (click)="createCustomer(customer)" *ngIf="!customer?.customerId">Create Customer</button> 
+        <button (click)="updateCustomer(customer)" *ngIf="customer?.id">Update Customer</button>
+        <button (click)="deleteCustomer(customer)" *ngIf="customer?.id">Delete Customer</button>
+        <button (click)="createCustomer(customer)" *ngIf="!customer?.id">Create Customer</button> 
     </div>
     
 </div>

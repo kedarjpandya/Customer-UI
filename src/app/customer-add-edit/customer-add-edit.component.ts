@@ -28,6 +28,7 @@ export class CustomerAddEditComponent implements OnInit {
         });
     }
 
+
     ngOnInit(): void {
       this.customerForm.patchValue(this.data);
     }
@@ -41,29 +42,32 @@ export class CustomerAddEditComponent implements OnInit {
       if (this.data) {
           this.storeIdInSessionStorage(this.data.id);
         this.customerService
-            .updateCustomer(this.data.id, this.customerForm.value)
+            .updateCustomer(this.data.id,this.customerForm.value)
             .subscribe({
               next: (val: any) => {
-                alert('Employee details updated!');
+                alert('Customer details updated!');
 
                 this.dialogRef.close(true);
               },
               error: (err: any) => {
                 console.error(err);
-                alert("Error while updating the employee!");
+                alert("Error while updating the Customer!");
               },
             });
       } else {
+        console.log(this.customerForm.value)
         this.customerService.addCustomer(this.customerForm.value).subscribe({
           next: (val: any) => {
-          this.storeIdInSessionStorage(val.id);
-            alert('Employee added successfully!');
+            console.log(val);
+            console.log(this.customerForm.value)
+          this.storeIdInSessionStorage(val);
+            alert('Customer added successfully!');
             this.customerForm.reset();
             this.dialogRef.close(true);
           },
           error: (err: any) => {
             console.error(err);
-            alert("Error while adding the employee!");
+            alert("Error while adding the customer!");
           },
         });
       }
