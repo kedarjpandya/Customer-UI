@@ -1,0 +1,20 @@
+<div>
+    <div *ngIf="customer">    
+        <div>
+            First Name:
+            <input [(ngModel)]="customer.firstName" placeholder="firstname">
+        </div>
+        <div>
+            Last Name:
+            <input [(ngModel)]="customer.lastName" placeholder="lastname">
+        </div>
+        <div>
+            Email:
+            <input [(ngModel)]="customer.email" placeholder="email">
+        </div>
+        <button (click)="updateCustomer(customer)" *ngIf="customer?.customerId">Update Customer</button>
+        <button (click)="deleteCustomer(customer)" *ngIf="customer?.customerId">Delete Customer</button>
+        <button (click)="createCustomer(customer)" *ngIf="!customer?.customerId">Create Customer</button> 
+    </div>
+    
+</div>
